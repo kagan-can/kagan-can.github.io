@@ -1,0 +1,120 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #5b2b82, #9b5de5) !important;
+}
+
+/* ================= YOU GOT A MAIL FIX ================= */
+/* SADECE BU KISIM DÜZELTİLDİ */
+
+#mail-section {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.mail-title {
+    font-size: 36px;
+    margin-bottom: 18px;
+}
+
+/* Mektup */
+#envelope {
+    width: 260px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#envelope:hover {
+    transform: scale(1.05);
+}
+
+/* Kalp animasyonu */
+.heart {
+    position: fixed;
+    width: 40px;
+    animation: flyFromMail 2s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes flyFromMail {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+}
+
+/* ================= TINAWINA (ELLEMEDİK) ================= */
+
+/* Position the "No" button absolutely within body */
+#noButton {
+    position: absolute;
+    margin-left: 150px;
+    transition: 0.5s;
+}
+
+/* Yes button */
+#yesButton {
+    position: absolute;
+    margin-right: 150px;
+}
+
+.header_text {
+    font-family: 'Nunito';
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.btn {
+    background-color: #FFB6C1;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #FAF9F6;
+}
+
+.gif_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 90px;
+}
+
+/* mail-text artık HTML’den silindi ama CSS kalabilir */
+.mail-text {
+    margin-top: 15px;
+}

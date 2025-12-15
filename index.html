@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>💜</title>
+  <link rel="stylesheet" href="./style/css/styles.css">
+</head>
+
+<body>
+
+<!-- ================= MAIL SECTION ================= -->
+<div id="mail-section">
+
+  <h1 class="mail-title">Okunmamış Bir Mailiniz Var 💌</h1>
+
+  <img
+    id="envelope"
+    src="style/images/mail_closed.png"
+    alt="Mail"
+  >
+
+  
+
+</div>
+
+
+<!-- ================= TINAWINA SECTION ================= -->
+<div id="tinawina-section">
+
+  <div class="container">
+    <div>
+      <h1 class="header_text">Beni Seviyor Musun?</h1>
+    </div>
+
+    <div class="gif_container">
+      <img src="https://media.giphy.com/media/LnKonfpQ44fNvuGLkA/giphy.gif" alt="Cute animated illustration">
+    </div>
+
+    <div class="buttons">
+      <button class="btn" id="yesButton" onclick="nextPage()">Evet</button>
+      <button class="btn" id="noButton" onmouseover="moveButton()">Hayır</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+  // başta tinawina gizli
+  document.getElementById("tinawina-section").style.display = "none";
+
+  const envelope = document.getElementById("envelope");
+
+  envelope.addEventListener("click", () => {
+    envelope.src = "style/images/mail_opened.png";
+    createHeart();
+
+    setTimeout(() => {
+      document.getElementById("mail-section").style.display = "none";
+      document.getElementById("tinawina-section").style.display = "block";
+    }, 2000);
+  });
+
+  function createHeart() {
+    const heart = document.createElement("img");
+    heart.src = "style/images/heart.png";
+    heart.className = "heart";
+    document.body.appendChild(heart);
+
+    const rect = envelope.getBoundingClientRect();
+    heart.style.left = rect.left + rect.width / 2 - 20 + "px";
+    heart.style.top = rect.top + "px";
+
+    setTimeout(() => {
+      heart.remove();
+    }, 2000);
+  }
+
+  function nextPage() {
+    window.location.href = "yes.html";
+  }
+
+  function moveButton() {
+    const noBtn = document.getElementById("noButton");
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+  }
+</script>
+
+</body>
+</html>
